@@ -1,0 +1,331 @@
+/* Global Styles */
+:root {
+  --primary-color: #45A5CA;
+  --dark-color: #0B2E3B;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+
+.container {
+  max-width: 1400px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:280px;
+  height: 50px;
+  max-width: 90%;
+  margin:10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:280px;
+  height: 50px;
+  max-width: 90%;
+  margin:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "name name name name name name trash color";
+}
+
+.card h4 {
+  padding-left: 10px;
+  font-size: 17px;
+}
+.grabber-div{
+  height: 100%;
+  width: 25px;
+  grid-area: color;
+  justify-self: end;
+}
+.name {
+  margin-top: 0;
+  grid-area: name;
+  justify-self: start;
+  align-self: center;
+}
+
+.grabber-div:hover{
+  cursor: grab;
+}
+
+.trash {
+  grid-area: trash;
+  justify-self: end;
+  align-self: center;
+}
+.trash:hover {
+  cursor: pointer;
+}
+
+/* Problem Page problem list CSS Start */
+.list-box {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-box h3 {
+  margin-top: 10px;
+}
+.list {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+/* Problem Page problem list CSS End */
+
+/* Card main styling */
+.card-calendar {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:280px;
+  height: 170px;
+  max-width: 90%;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+
+}
+
+/* Size cards to fit 7 across on large screens */
+.calendar-card{
+  width: 14%;
+
+}
+
+/* set Done button at bottom of card */
+.card-calendar-button {
+  position: absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-container {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 350px;
+  height: 150px;
+  font-size: 25px;
+}
+
+.dashboard-card {
+  margin-top: 10px;
+}
+
+.calendar-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+}
+
+.important-number {
+  color: var(--danger-color);
+}
+
+span {
+  font-size: 25px;
+}
+
+.completed {
+  /* position: absolute; */
+  background-color: rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar li {
+  /* margin-right:25px; */
+  padding-right:25px;
+  
+}
+.link {
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.navbar a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+  color: var(--dark-color);
+}
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sort {
+  margin: 25px 5px;
+  height: 75px;
+  width: 150px;
+}
+
+.btn-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.btn-white,
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.bg-light,
+.badge-light {
+  border: #ccc solid 1px;
+}
+
+
+@media only screen and (max-width: 1100px){
+  .calendar-card{
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .calendar-card{
+    width: 90%;
+  }
+
+  .calendar-container {
+   flex-direction: column;
+  }
+}
