@@ -5,7 +5,7 @@ const CalendarCard = ({day, problem: {id,title,difficulty, category, completed}}
   const scheduleContext = useContext(ScheduleContext);
 
   const { setCompleted,schedule, complete} = scheduleContext;
-  
+
   const setCompletedHandler = (idx) => {
     // 1 was added to idx on parent so first day is not 0, so subtracting it back out
     idx --;

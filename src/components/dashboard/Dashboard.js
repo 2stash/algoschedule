@@ -6,12 +6,14 @@ const Dashboard = () => {
 
   const { schedule, complete } = scheduleContext;
   
-  let currentDay = complete +1 || 1;
+  let currentProblemIndex = schedule.findIndex((problem) => problem.completed === false)
+  let currentDay = currentProblemIndex + 1;
+  let currentTitle = schedule[currentProblemIndex].title;
 
   return (
     <div className='dashboard-container'>
         <div className="dashboard-card">Day {currentDay}</div>
-        <div className="dashboard-card">{schedule !== null && schedule !== undefined ? schedule[complete].title : null}</div>
+        <div className="dashboard-card">{schedule !== null && schedule !== undefined ? currentTitle : null}</div>
 
       <div className="dashboard-card">
         {complete && <span className='important-number'>{complete} </span>}

@@ -11,7 +11,6 @@ const Schedule = () => {
   if (schedule === null || schedule === undefined) {
     return <p>hi</p>;
   }
-  console.log(schedule);
   return (
     <div className='schedule-container'>
       <Dashboard />
