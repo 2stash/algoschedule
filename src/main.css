@@ -14,11 +14,13 @@
 }
 
 body {
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3; */
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
@@ -110,7 +112,7 @@ h4 {
   margin: 10px;
   padding: 10px;
   position: relative;
-
+background-color: #fff;
 }
 
 /* Size cards to fit 7 across on large screens */
@@ -156,6 +158,16 @@ h4 {
   justify-content: center;
   align-items: center;
   width:90%;
+  /* background-color: #fff; */
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(253, 220, 29, 1) 1%,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(47, 173, 200, 1) 97%,
+    rgba(253, 220, 29, 1) 99%
+  );
 }
 
 .about-container {

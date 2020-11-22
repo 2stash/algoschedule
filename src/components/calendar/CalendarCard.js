@@ -41,7 +41,7 @@ const CalendarCard = ({day, problem: {id,title,difficulty, category, completed}}
         <p>{difficulty}</p>
         <p>{category}</p>
         <div className="card-calendar-button">
-        <button className="btn btn-block btn-danger" onClick={()=>setCompletedHandler(day)}>Done</button>
+        <button className="btn btn-block btn-primary" onClick={()=>setCompletedHandler(day)}>Done</button>
         </div>
       </div>
     )

@@ -5,23 +5,52 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
 import Options from "./Options";
 
+const DifficultyContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1800px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(253, 220, 29, 1) 1%,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(47, 173, 200, 1) 97%,
+    rgba(253, 220, 29, 1) 99%
+  );
+`;
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1800px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  overflow:hidden;
+  overflow: hidden;
   padding: 10px;
   margin: 10px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(253, 220, 29, 1) 1%,
+    rgba(131, 58, 180, 1) 43%,
+    rgba(47, 173, 200, 1) 97%,
+    rgba(253, 220, 29, 1) 99%
+  );
 `;
 
 class DndProblems extends React.Component {
   state = initialData;
 
   handleSetCategoryFalse = () => {
-    if(this.state.sorting === false ){
-      return
+    if (this.state.sorting === false) {
+      return;
     }
     const newState = {
       ...this.state,
@@ -31,8 +60,8 @@ class DndProblems extends React.Component {
   };
 
   handleSetCategoryTrue = () => {
-    if(this.state.sorting === true ){
-      return
+    if (this.state.sorting === true) {
+      return;
     }
     const newState = {
       ...this.state,
@@ -44,37 +73,37 @@ class DndProblems extends React.Component {
   handleSetSchedule = () => {
     let tempArray = [];
 
-    if(this.state.sorting === false){
+    if (this.state.sorting === false) {
       this.state.columnOrder.map((columnId) => {
         const column = this.state.columns[columnId];
         const tasks = column.taskIds.map((taskId) => {
-          if(this.state.tasks[taskId].filter ===true){
-            return
+          if (this.state.tasks[taskId].filter === true) {
+            return;
           }
-          tempArray.push(this.state.tasks[taskId])
-        })
-      })
+          tempArray.push(this.state.tasks[taskId]);
+        });
+      });
     } else {
       this.state.columnCategoryOrder.map((columnId) => {
         const column = this.state.columnsCategoryList[columnId];
         const tasks = column.taskIds.map((taskId) => {
-          tempArray.push(this.state.tasks[taskId])
-        })
-      })
+          tempArray.push(this.state.tasks[taskId]);
+        });
+      });
     }
-    this.props.handleSetSchedule(tempArray)
+    this.props.handleSetSchedule(tempArray);
   };
 
   handleDeleteProblem = (id) => {
     const newState = {
       ...this.state,
-      tasks: {...this.state.tasks,
+      tasks: {
+        ...this.state.tasks,
         [id]: {
           ...this.state.tasks[id],
-          filter:!this.state.tasks[id].filter,
-        }
+          filter: !this.state.tasks[id].filter,
+        },
       },
-
     };
     this.setState(newState);
   };
@@ -171,11 +200,10 @@ class DndProblems extends React.Component {
   render() {
     return (
       <Fragment>
-        <Options 
-        handleSetCategoryFalse={this.handleSetCategoryFalse
-        } 
-        handleSetCategoryTrue={this.handleSetCategoryTrue}
-        handleSetSchedule={this.handleSetSchedule}
+        <Options
+          handleSetCategoryFalse={this.handleSetCategoryFalse}
+          handleSetCategoryTrue={this.handleSetCategoryTrue}
+          handleSetSchedule={this.handleSetSchedule}
         />
         {this.state.sorting === false ? (
           <DragDropContext onDragEnd={this.onDragEnd}>
@@ -185,7 +213,7 @@ class DndProblems extends React.Component {
               type='column'
             >
               {(provided) => (
-                <Container {...provided.droppableProps} ref={provided.innerRef}>
+                <DifficultyContainer {...provided.droppableProps} ref={provided.innerRef}>
                   {this.state.columnOrder.map((columnId, index) => {
                     const column = this.state.columns[columnId];
                     const tasks = column.taskIds.map(
@@ -203,7 +231,7 @@ class DndProblems extends React.Component {
                     );
                   })}
                   {provided.placeholder}
-                </Container>
+                </DifficultyContainer>
               )}
             </Droppable>
           </DragDropContext>

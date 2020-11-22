@@ -851,6 +851,7 @@ const initialData = {
       taskIds: ["prob-6","prob-24","prob-25","prob-26","prob-27","prob-28","prob-37","prob-46","prob-47","prob-48","prob-49","prob-50","prob-51","prob-52","prob-60","prob-66","prob-70","prob-74","prob-75","prob-76","prob-77","prob-82","prob-83","prob-86","prob-87","prob-88","prob-89","prob-90","prob-97","prob-98","prob-99","prob-102"],
     },
     "column-4": {
+      id: "column-4",
       title: "Very Hard",
       taskIds: ["prob-29","prob-30","prob-36","prob-38","prob-39","prob-40","prob-41","prob-53","prob-54","prob-55","prob-56","prob-57","prob-61","prob-67","prob-68","prob-71","prob-78","prob-79","prob-84","prob-91","prob-94","prob-100"]
     }

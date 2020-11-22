@@ -11,20 +11,10 @@ const About = () => {
 
       <br />
       <p>
-        I feel like there is potential for a tool like this to be used, or at
-        the very least that the algo websites add some sort of study plan to
-        their offerings. At least for me, places like leetcode are overwhelming;
-        "here is a list of thousands of problems, do them in any order, good
-        luck".
+        Check out the github repo below, and feel free to reach out with any comments or suggestions.
       </p>
       <br />
 
-      <p>
-        I have studied foreign languages a lot, and in foreign language study
-        you are always trying to study N + 1. Meaning you want to be doing
-        something a tiny bit out of your comfort zone. This is where algorithims
-        training needs to get to.
-      </p>
       <div style={styles}>
         <span>
           <a
