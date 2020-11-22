@@ -34,6 +34,8 @@ export default class Task extends React.Component {
       color = "#51adef";
     } else if (this.props.task.difficulty === "Hard") {
       color = "#ef5151";
+    } else if(this.props.task.difficulty === "Very Hard"){
+      color = "#383535";
     }
 
     let strikeThrough;

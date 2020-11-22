@@ -12,12 +12,16 @@ const Navbar = () => {
           <i className="fas fa-clipboard-list"></i> AlgoSchedule
         </h1>
         <ul>
-          {/* <li className="">
-            <Link className="link" to='/' >Home</Link>
-          </li> */}
+          <li className="">
+            {!scheduleset && <Link className="link" to='/' >Home</Link>} 
+          </li>
+
           <li>
           {scheduleset && <Link className="link" to='/schedule' >Schedule</Link>}
+          </li>
 
+          <li>
+            <Link className="link" to='/about'>About</Link>
           </li>
         </ul>
       </nav>

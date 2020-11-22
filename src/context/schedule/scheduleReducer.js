@@ -1,4 +1,4 @@
-import { INCREASE_COUNT, SAVE_SCHEDULE, SET_COMPLETED, GET_LOCALSTORAGE } from "../types";
+import { INCREASE_COUNT, SAVE_SCHEDULE, SET_COMPLETED, GET_LOCALSTORAGE, RESET_SCHEDULE } from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -21,15 +21,20 @@ export default (state, action) => {
         schedule: action.payload      
       };
     case INCREASE_COUNT:
-
       let num = state.complete +1 ;
       localStorage.setItem('algoCompleted', JSON.stringify(num))
       return {
         ...state,
         schedule: action.payload,
         complete: state.complete +1,
-        
       };
+    case RESET_SCHEDULE:
+      return{
+      ...state,
+      schedule: [],
+      complete: 0,
+      scheduleset: false,
+      }
     default:
       return state;
   }

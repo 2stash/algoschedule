@@ -158,6 +158,11 @@ h4 {
   width:90%;
 }
 
+.about-container {
+  max-width: 600px;
+  font-size: 24px;
+}
+
 .important-number {
   color: var(--danger-color);
 }
@@ -243,6 +248,10 @@ span {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.btn-reset {
+  margin-top: 50px;
 }
 .btn-primary,
 .bg-primary,

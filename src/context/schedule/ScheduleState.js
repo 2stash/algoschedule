@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import ScheduleContext from './scheduleContext';
 import ScheduleReducer from './scheduleReducer';
-import { SAVE_SCHEDULE, SET_COMPLETED, INCREASE_COUNT, GET_LOCALSTORAGE} from '../types';
+import { SAVE_SCHEDULE, SET_COMPLETED, INCREASE_COUNT, GET_LOCALSTORAGE, RESET_SCHEDULE} from '../types';
 
 const ScheduleState = props => {
   const initialState = {
@@ -41,6 +41,12 @@ const ScheduleState = props => {
     localStorage.setItem('algoSchedule', JSON.stringify(arr))
   }
 
+  const resetSchedule = () => {
+    localStorage.removeItem('algoSchedule');
+    localStorage.removeItem('algoCompleted');
+    dispatch({type: RESET_SCHEDULE});
+  }
+
   return <ScheduleContext.Provider
     value={{
       schedule: state.schedule,
@@ -51,7 +57,8 @@ const ScheduleState = props => {
       setCompleted,
       saveToLocalStorage,
       increaseCount,
-      setInitialState
+      setInitialState,
+      resetSchedule
 
     }}
   

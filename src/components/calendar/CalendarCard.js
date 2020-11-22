@@ -35,7 +35,7 @@ const CalendarCard = ({day, problem: {id,title,difficulty, category, completed}}
     )
   } else {
     return (
-      <div className="card-calendar">
+      <div className="card-calendar in-process">
         <h3>Day {day}</h3>
         <h3>{title}</h3>
         <p>{difficulty}</p>
