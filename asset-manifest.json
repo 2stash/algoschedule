@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/algoschedule/static/css/main.abeb87d6.chunk.css",
+    "main.js": "/algoschedule/static/js/main.b9d9deff.chunk.js",
+    "main.js.map": "/algoschedule/static/js/main.b9d9deff.chunk.js.map",
+    "runtime-main.js": "/algoschedule/static/js/runtime-main.1508ed4e.js",
+    "runtime-main.js.map": "/algoschedule/static/js/runtime-main.1508ed4e.js.map",
+    "static/js/2.1431d9aa.chunk.js": "/algoschedule/static/js/2.1431d9aa.chunk.js",
+    "static/js/2.1431d9aa.chunk.js.map": "/algoschedule/static/js/2.1431d9aa.chunk.js.map",
+    "index.html": "/algoschedule/index.html",
+    "static/css/main.abeb87d6.chunk.css.map": "/algoschedule/static/css/main.abeb87d6.chunk.css.map",
+    "static/js/2.1431d9aa.chunk.js.LICENSE.txt": "/algoschedule/static/js/2.1431d9aa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1508ed4e.js",
+    "static/js/2.1431d9aa.chunk.js",
+    "static/css/main.abeb87d6.chunk.css",
+    "static/js/main.b9d9deff.chunk.js"
+  ]
+}
