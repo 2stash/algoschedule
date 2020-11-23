@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import initialData from "./initial-data";
-import Column from "./Column";
+import Column from "./difficultysort/Column";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import styled from "styled-components";
-import Options from "./Options";
+import Options from "./buttons/Options";
+import CategorySort from "./categorysort/CategorySort";
 
 const DifficultyContainer = styled.div`
   display: flex;
@@ -27,6 +28,7 @@ const DifficultyContainer = styled.div`
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1800px;
@@ -44,6 +46,12 @@ const Container = styled.div`
     rgba(253, 220, 29, 1) 99%
   );
 `;
+
+const CategoryContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+`
 
 class DndProblems extends React.Component {
   state = initialData;
@@ -107,6 +115,14 @@ class DndProblems extends React.Component {
     };
     this.setState(newState);
   };
+
+  setCategoryColumnOrder = arr => {
+    const newState = {
+      ...this.state,
+      columnCategoryOrder: arr,
+    };
+    this.setState(newState);
+  }
 
   onDragEnd = (result) => {
     // from initial data: columnOrder = columnCategoryOrder
@@ -236,10 +252,12 @@ class DndProblems extends React.Component {
             </Droppable>
           </DragDropContext>
         ) : (
+          <CategoryContainer>
+          <CategorySort columnList={this.state.columnCategoryOrder} data={this.state.columnsCategoryList} setCategoryColumnOrder={this.setCategoryColumnOrder} ></CategorySort>
           <DragDropContext onDragEnd={this.onDragEnd}>
             <Droppable
               droppableId='sort-columns'
-              direction='horizontal'
+              direction='vertical'
               type='column'
             >
               {(provided) => (
@@ -264,6 +282,7 @@ class DndProblems extends React.Component {
               )}
             </Droppable>
           </DragDropContext>
+          </CategoryContainer>
         )}
       </Fragment>
     );
