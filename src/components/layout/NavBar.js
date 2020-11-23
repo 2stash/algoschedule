@@ -13,15 +13,15 @@ const Navbar = () => {
         </h1>
         <ul>
           <li className="">
-            {!scheduleset && <Link className="link" to='/' >Home</Link>} 
+            {!scheduleset && <Link className="link" to='/algoschedule' >Home</Link>} 
           </li>
 
           <li>
-          {scheduleset && <Link className="link" to='/schedule' >Schedule</Link>}
+          {scheduleset && <Link className="link" to='/algoschedule/schedule' >Schedule</Link>}
           </li>
 
           <li>
-            <Link className="link" to='/about'>About</Link>
+            <Link className="link" to='/algoschedule/about'>About</Link>
           </li>
         </ul>
       </nav>

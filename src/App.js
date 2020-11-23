@@ -33,11 +33,11 @@ function App(props) {
           <NavBar />
           <div className='container'>
             <Switch>
-              <Route exact path='/' component={()=> <DndProblems handleSetSchedule={handleSetSchedule}/>} >
-                {value.length !==0 || scheduleset===true ? <Redirect to='/schedule' /> : null}
+              <Route exact path='/algoschedule' component={()=> <DndProblems handleSetSchedule={handleSetSchedule}/>} >
+                {value.length !==0 || scheduleset===true ? <Redirect to='/algoschedule/schedule' /> : null}
               </Route>
-              <Route exact path='/schedule' component={Schedule} />
-              <Route exact path='/about' component={About} />
+              <Route exact path='/algoschedule/schedule' component={Schedule} />
+              <Route exact path='/algoschedule/about' component={About} />
             </Switch>
           </div>
         </div>

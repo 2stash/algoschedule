@@ -9,7 +9,7 @@ const Schedule = (props) => {
   const { schedule, complete } = scheduleContext;
 
   if (schedule === null || schedule === undefined || schedule.length === 0) {
-    return <Redirect to='/' />;
+    return <Redirect to='/algoschedule' />;
   } else if (schedule.length === complete) {
     return <p>You WIN!</p>;
   } else {
