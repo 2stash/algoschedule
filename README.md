@@ -14,6 +14,9 @@ Honestly, any time I do anything I make some sort of schedule to track my progre
 * Context for state
 * react-beautiful-dnd
 
+![](algoschedule.gif)
+
+
 ##### Da Future
 Potentially I would like to build this out in to a more general schedule builder/planner. 
 
